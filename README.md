@@ -34,7 +34,6 @@
       <ul>
         <li><a href="#아키텍처">아키텍처</a></li>
         <li><a href="#UI-UX-설계">UI/UX 설계</a></li>
-        <li><a href="#시퀀스-다이어그램">시퀀스 다이어그램</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -66,11 +65,6 @@
 ### UI UX 설계
 카카오 오븐으로 설계한 UI/UX 설계이다.
 ![ui](https://user-images.githubusercontent.com/41707077/142130293-c0070751-4520-41a0-b905-040ebdba0800.png)
-
-
-### 시퀀스 다이어그램
-회원가입 또는 로그인 후, 학교 인증을 진행해야 플로깅 서비스를 시작할 수 있다. 다음은 요구사항을 정의 시,  앱과 서버의 역할을 나누기 위해 논의한 내용을 표현한 시퀀스 다이어그램이다.
-![sequence](https://user-images.githubusercontent.com/41707077/142095886-5a3b6a83-0d64-49bd-bc70-4f04e83a32e2.png)
 
 <p align="right"><a href="#top">▲맨 위로</a></p>
 
