@@ -3,12 +3,15 @@ package dku.gyeongsotone.gulging.campusplogging.ui.main.history
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import dku.gyeongsotone.gulging.campusplogging.data.local.model.Plogging
 import dku.gyeongsotone.gulging.campusplogging.databinding.ItemPloggingHistoryBinding
 import dku.gyeongsotone.gulging.campusplogging.utils.Constant.EXTRA_PLOGGING_ID
 
-class PloggingHistoryAdapter : RecyclerView.Adapter<PloggingHistoryAdapter.ViewHolder>() {
+class PloggingHistoryAdapter :
+    ListAdapter<Plogging, PloggingHistoryAdapter.ViewHolder>(PloggingDiffCallback()) {
     private val items = mutableListOf<Plogging>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -73,5 +76,16 @@ class PloggingHistoryAdapter : RecyclerView.Adapter<PloggingHistoryAdapter.ViewH
                 return ViewHolder(binding)
             }
         }
+    }
+}
+
+private class PloggingDiffCallback : DiffUtil.ItemCallback<Plogging>() {
+
+    override fun areItemsTheSame(oldItem: Plogging, newItem: Plogging): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Plogging, newItem: Plogging): Boolean {
+        return oldItem == newItem
     }
 }

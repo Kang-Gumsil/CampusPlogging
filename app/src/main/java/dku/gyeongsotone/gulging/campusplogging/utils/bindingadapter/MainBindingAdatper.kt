@@ -38,8 +38,7 @@ fun RecyclerView.setPloggingHistory(items: List<Plogging>?) {
     }
 
     if (items != null) {
-        (adapter as PloggingHistoryAdapter).replaceAll(items)
-        adapter!!.notifyDataSetChanged()
+        (adapter as PloggingHistoryAdapter).submitList(items)
     }
 }
 
@@ -52,8 +51,7 @@ fun RecyclerView.setChallenge(items: List<Challenge>) {
         }
     }
 
-    (adapter as ChallengeAdapter).replaceAll(items)
-    adapter!!.notifyDataSetChanged()
+    (adapter as ChallengeAdapter).submitList(items)
 
 }
 

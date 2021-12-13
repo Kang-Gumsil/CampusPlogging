@@ -16,63 +16,63 @@ object PloggingRepository {
         dao = ploggingDao
     }
 
-    suspend fun insert(item: Plogging) = withContext(Dispatchers.IO) {
+    suspend fun insert(item: Plogging) {
         dao.insert(item)
     }
 
-    suspend fun update(item: Plogging) = withContext(Dispatchers.IO) {
+    suspend fun update(item: Plogging) {
         dao.update(item)
     }
 
-    suspend fun delete(item: Plogging) = withContext(Dispatchers.IO) {
+    suspend fun delete(item: Plogging) {
         dao.delete(item)
     }
 
-    suspend fun deleteById(id: Int) = withContext(Dispatchers.IO) {
+    suspend fun deleteById(id: Int) {
         dao.deleteById(id)
     }
 
-    suspend fun getPlogging(id: Int): Plogging? = withContext(Dispatchers.IO) {
-        return@withContext dao.getPlogging(id)
+    suspend fun getPlogging(id: Int): Plogging? {
+        return dao.getPlogging(id)
     }
 
-    suspend fun getTotalDistance(): Double = withContext(Dispatchers.IO) {
-        return@withContext dao.getTotalDistance() ?: 0.0
+    suspend fun getTotalDistance(): Double {
+        return dao.getTotalDistance() ?: 0.0
     }
 
-    suspend fun getTotalTime(): Int = withContext(Dispatchers.IO) {
-        return@withContext dao.getTotalTime() ?: 0
+    suspend fun getTotalTime(): Int {
+        return dao.getTotalTime() ?: 0
     }
 
-    suspend fun getTotalBadge(): Int = withContext(Dispatchers.IO) {
-        return@withContext dao.getTotalBadge() ?: 0
+    suspend fun getTotalBadge(): Int {
+        return dao.getTotalBadge() ?: 0
     }
 
-    suspend fun getTotalTrash(): Int = withContext(Dispatchers.IO) {
-        return@withContext dao.getTotalTrash() ?: 0
+    suspend fun getTotalTrash(): Int {
+        return dao.getTotalTrash() ?: 0
     }
 
-    suspend fun getTrashKind(): Int = withContext(Dispatchers.IO) {
-        return@withContext dao.getTrashKind() ?: 0
+    suspend fun getTrashKind(): Int {
+        return dao.getTrashKind() ?: 0
     }
 
-    suspend fun getMonthlyDistance(from: Date, to: Date): Double = withContext(Dispatchers.IO) {
-        return@withContext dao.getMonthlyDistance(from, to) ?: 0.0
+    suspend fun getMonthlyDistance(from: Date, to: Date): Double {
+        return dao.getMonthlyDistance(from, to) ?: 0.0
     }
 
-    suspend fun getMonthlyTime(from: Date, to: Date): Double = withContext(Dispatchers.IO) {
-        return@withContext dao.getMonthlyTime(from, to) ?: 0.0
+    suspend fun getMonthlyTime(from: Date, to: Date): Double {
+        return dao.getMonthlyTime(from, to) ?: 0.0
     }
 
-    suspend fun getMonthlyTrash(from: Date, to: Date): Double = withContext(Dispatchers.IO) {
-        return@withContext dao.getMonthlyTrash(from, to) ?: 0.0
+    suspend fun getMonthlyTrash(from: Date, to: Date): Double {
+        return dao.getMonthlyTrash(from, to) ?: 0.0
     }
 
     suspend fun getMonthlyPlogging(
         from: Date,
         to: Date
-    ): List<Plogging> = withContext(Dispatchers.IO) {
+    ): List<Plogging> {
 
-        return@withContext dao.getMonthlyPlogging(from, to) ?: listOf()
+        return dao.getMonthlyPlogging(from, to) ?: listOf()
     }
 }
